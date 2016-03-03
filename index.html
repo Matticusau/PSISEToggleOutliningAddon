@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>PsISE Toggle Outlining Add-on by Matticusau</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">PsISE Toggle Outlining Add-on</h1>
+      <h2 class="project-tagline">PowerShell Module to implement an Add-On for the ISE to toggle the expand/collapse of expandable sections in all open files</h2>
+      <a href="https://github.com/Matticusau/PSISEToggleOutliningAddon" class="btn">View on GitHub</a>
+      <a href="https://github.com/Matticusau/PSISEToggleOutliningAddon/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Matticusau/PSISEToggleOutliningAddon/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="psisetoggleoutliningaddon" class="anchor" href="#psisetoggleoutliningaddon" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PSISEToggleOutliningAddon</h1>
+
+<p>PowerShell Module to implement an Add-On for the ISE to toggle the expand/collapse of expandable sections in all open files</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>To install the Add-on follow one of the following options:</p>
+
+<h3>
+<a id="wmf-50" class="anchor" href="#wmf-50" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WMF 5.0</h3>
+
+<ul>
+<li>Open PowerShell ISE</li>
+<li>Run the following commands
+
+<ul>
+<li>Install-Module -Name PSISEToggleOutliningAddon -Repository PSGallery;</li>
+<li>Install-ISEToggleOutliningAddon</li>
+</ul>
+</li>
+<li>Open multiple scripts with collapsible sections and press CTRL+SHIFT+M to see the add-on in use</li>
+</ul>
+
+<h3>
+<a id="wmf-40" class="anchor" href="#wmf-40" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WMF 4.0</h3>
+
+<ul>
+<li>Download the master branch of this repository
+
+<ul>
+<li>or browse to <a href="https://www.powershellgallery.com/packages/PSISEToggleOutliningAddon">PowerShellGallery.com</a> and download PSISEToggleOutliningAddon</li>
+</ul>
+</li>
+<li>Save the downloaded module to $HOME\Documents\WindowsPowerShell\Modules for the current user or C:\Program Files\WindowsPowerShell\Modules for all users</li>
+<li>Open the PowerShell ISE</li>
+<li>Run the following command to install the add-on
+
+<ul>
+<li>Install-ISEToggleOutliningAddon</li>
+</ul>
+</li>
+<li>Open multiple scripts with collapsible sections and press CTRL+SHIFT+M to see the add-on in use</li>
+</ul>
+
+<h2>
+<a id="automate-the-registration-of-the-add-on-at-ise-startup" class="anchor" href="#automate-the-registration-of-the-add-on-at-ise-startup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Automate the registration of the Add-on at ISE Startup</h2>
+
+<p>To automatically install this add-on everytime the ISE is started use these steps:</p>
+
+<ul>
+<li>Follow one of the processes above to download and install the module</li>
+<li>Open the PowerShell ISE</li>
+<li>Edit your profile script with PSEDIT $profile
+
+<ul>
+<li>or manually open your profile script from $HOME\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1</li>
+</ul>
+</li>
+<li>Add a line to the script to run 
+
+<ul>
+<li>Install-ISEToggleOutliningAddon</li>
+</ul>
+</li>
+<li>Save your profile script</li>
+<li>Close and reopen the ISE</li>
+</ul>
+
+<h2>
+<a id="functions" class="anchor" href="#functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Functions</h2>
+
+<ul>
+<li>
+<strong>Install-ISEToggleOutliningAddon</strong> Installs the add-on into the ISE</li>
+<li>
+<strong>Invoke-ISEToggleOutliningAllFiles</strong> Used by the add-on menu/shortcut key to execute the functionality</li>
+</ul>
+
+<h3>
+<a id="install-isetoggleoutliningaddon" class="anchor" href="#install-isetoggleoutliningaddon" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install-ISEToggleOutliningAddon</h3>
+
+<p>This function is used to install the Add-on within the ISE. Add this to your profile script to automate this at start up.</p>
+
+<h3>
+<a id="invoke-isetoggleoutliningallfiles" class="anchor" href="#invoke-isetoggleoutliningallfiles" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Invoke-ISEToggleOutliningAllFiles</h3>
+
+<p>This function is used to implement the functionality of the Add-on. From within the ISE when you use the menu item or keyboard shortcut keys this is the function that is called. You can call this function directly however this would defeat the purpose of the shortcut keys.</p>
+
+<h2>
+<a id="versions" class="anchor" href="#versions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Versions</h2>
+
+<h3>
+<a id="unreleased" class="anchor" href="#unreleased" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unreleased</h3>
+
+<ul>
+<li>None</li>
+</ul>
+
+<h3>
+<a id="1000" class="anchor" href="#1000" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.0.0.0</h3>
+
+<ul>
+<li>Initial release with following functionality
+
+<ul>
+<li>Add-on installation</li>
+<li>Menu and Shortcut keys</li>
+<li>Support for multiple PowerShell tabs and Files</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>If you are interested in contributing please check out common DSC Resources <a href="https://github.com/PowerShell/DscResource.Kit/blob/master/CONTRIBUTING.md">contributing guidelines</a>. These are the standards I try and adopt for my work as well.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>This module is released under the <a href="https://github.com/Matticusau/PSISEToggleOutliningAddon/blob/master/LICENSE">GNU General Public License 3.0</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Matticusau/PSISEToggleOutliningAddon">PsISE Toggle Outlining Add-on</a> is maintained by <a href="https://github.com/Matticusau">Matticusau</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
