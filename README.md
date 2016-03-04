@@ -14,7 +14,7 @@ To install the Add-on follow one of the following options:
 
 ### WMF 4.0
 * Download the master branch of this repository
-    * or browse to [PowerShellGallery.com](http://www.powershellgallery.com) and download PSISEToggleOutliningAddon
+    * or browse to [PowerShellGallery.com](https://www.powershellgallery.com/packages/PSISEToggleOutliningAddon) and download PSISEToggleOutliningAddon
 * Save the downloaded module to $HOME\Documents\WindowsPowerShell\Modules for the current user or C:\Program Files\WindowsPowerShell\Modules for all users
 * Open the PowerShell ISE
 * Run the following command to install the add-on
