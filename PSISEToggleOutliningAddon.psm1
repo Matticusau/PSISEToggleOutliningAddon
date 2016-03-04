@@ -2,14 +2,15 @@
 
 <#
     Script:     ISEColapseAllFiles.ps1
-    Author:     Matt Lavery
+    Author:     Matt Lavery (@matticusau)
     Created:    02/03/2016
-    Version:    0.0.1
+    Version:    1.0.0.1
     
     Change History
     Version    Who          When           What
     --------------------------------------------------------------------------------------------------
-    0.0.1      MLavery      02/03/2016     Initial Coding
+    1.0.0.0      MLavery      02/03/2016     Initial Coding
+    1.0.0.1      MLavery      04/03/2016     Updated manifest and small bug fixes (Issues #1, #2, #3)
     
 #>
 
@@ -60,7 +61,7 @@ function Install-ISEToggleOutliningAddon
 
         if ($psISETab.AddOnsMenu.Submenus.DisplayName.Contains($menuItemName))
         {
-            $psISETab.AddOnsMenu.Submenus.Remove(($psISETab.AddOnsMenu.Submenus.GetEnumerator() | Where-Object DisplayName -EQ $menuItemName));
+            $psISETab.AddOnsMenu.Submenus.Remove(($psISETab.AddOnsMenu.Submenus.GetEnumerator() | Where-Object DisplayName -EQ $menuItemName)) | Out-Null;
         }
         
         # add the add-on menu
